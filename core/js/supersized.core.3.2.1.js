@@ -69,7 +69,7 @@
 			var img = $('<img src="'+api.getField('image')+'"/>');
 			img.appendTo(base.el).wrap('<a class="image-loading activeslide" ' + imageLink + linkTarget + '></a>').css('visibility','hidden');
 			
-			img.load(function(){
+			img.on("load", function(){
 				base._origDim($(this));
 				base.resizeNow();	// Resize background image
 				base.launch();
